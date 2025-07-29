@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taiko Mock-Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Onboarding / Main Menu -->
+  <div id="menu">
+    <img id="onboarding-avatar" src="avatar.png" alt="Avatar">
+    <button id="start-btn">START</button>
+    <audio id="bg-music" src="bg_music.mp3" loop></audio>
+  </div>
+
+  <!-- Level Selection -->
+  <div id="level-menu" class="hidden">
+    <div class="level-select-container">
+      <!-- Left: scrollable level list -->
+      <aside class="level-list-panel">
+        <ul id="level-list"></ul>
+      </aside>
+
+
+    <!-- Center: avatar at top, then name, diff, play/back at bottom -->
+    <div class="center-panel amatic">
+      <img id="avatar" src="avatar2.png" alt="Avatar">
+      <h2 id="selected-level" class="level-title" style="text-align:center;margin:12px 0 12px 0;font-size:2.5rem;">Select a level</h2>
+      <p class="diff-line" style="text-align:center;margin:0 0 24px 0;font-size:1.5rem;">
+        Difficulty: <span id="diff-text">Medium</span>
+      </p>
+      <!-- Spacer to push buttons to bottom -->
+      <div style="flex:1 1 auto;"></div>
+      <!-- Bottom container for buttons -->
+      <div class="button-row">
+        <button id="back-to-menu" class="menu-btn">Back</button>
+        <button id="proceed-btn" class="menu-btn">Play</button>
+      </div>
+    </div>
+
+      <!-- Right: scrollable difficulty list -->
+      <aside class="diff-list-panel">
+        <ul id="diff-list">
+          <li data-diff="easy">Easy</li>
+          <li data-diff="medium" class="selected">Medium</li>
+          <li data-diff="hard">Hard</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+<!-- Game Canvas -->
+<canvas id="game" class="hidden"></canvas>
+<div id="hit-circle" class="hidden"></div>
+
+  <!-- Progress Bar -->
+  <div id="progress-container" class="progress-container hidden">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+
+  <!-- Visualizer -->
+  <canvas id="visualizer" class="visualizer hidden"></canvas>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden"></div>
+
+  <script type="module" src="./src/main.js" defer></script>
+</body>
+</html>
